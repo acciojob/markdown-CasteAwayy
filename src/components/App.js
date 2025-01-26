@@ -18,8 +18,8 @@ export default function App() {
 
   useEffect(() => {
     let md = new MarkdownIt();
-    let renderedHTML = md.render(markdown);
-    setPreview(renderedHTML);
+    let currPrev = md.render(markdown);
+    setPreview(currPrev);
   }, [markdown]);
 
   const handleMarkdownChange = (e) => {
@@ -33,11 +33,12 @@ export default function App() {
   return (
     <div className="app">
       <div className="textarea-container">
-        {/* <textarea
+        <textarea
           className="textarea"
+          rows={20}
           value={markdown}
           onChange={handleMarkdownChange}
-        /> */}
+        />
       </div>
       <div className="preview-container">
         <div
@@ -48,3 +49,4 @@ export default function App() {
     </div>
   );
 }
+
