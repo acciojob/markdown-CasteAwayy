@@ -33,17 +33,17 @@ export default function App() {
   return (
     <div className="app">
       <div className="textarea-container">
-        <textarea
+        {/* <textarea
           className="textarea"
           value={markdown}
           onChange={handleMarkdownChange}
-        />
+        /> */}
       </div>
       <div className="preview-container">
-       {/* <div
+        <div
           className="preview"
           dangerouslySetInnerHTML={{ __html: preview }}
-        /> */}
+        />
       </div>
     </div>
   );
