@@ -27,7 +27,7 @@ export default function App() {
     return <div className="loading">Loading...</div>;
   }
 
-  return (
+ return (
     <div className="app">
       <div className="textarea-container">
         <textarea
@@ -38,7 +38,9 @@ export default function App() {
         />
       </div>
       <div className="preview-container">
-        <div className="preview">{preview}</div>
+        <div className="preview">
+          <h1>{preview}</h1>
+        </div>
       </div>
     </div>
   );
