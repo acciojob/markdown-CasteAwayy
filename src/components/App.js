@@ -38,7 +38,9 @@ export default function App() {
           rows={20}
           value={markdown}
           onChange={handleMarkdownChange}
-        />
+        >
+          {markdown}
+        </textarea>
       </div>
       <div className="preview-container">
         <div
