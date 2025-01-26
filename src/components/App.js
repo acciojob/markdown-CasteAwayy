@@ -37,16 +37,14 @@ export default function App() {
           className="textarea"
           value={markdown}
           onChange={handleMarkdownChange}
-          placeholder="Write your markdown here..."
         />
       </div>
       <div className="preview-container">
         <div
           className="preview"
           dangerouslySetInnerHTML={{ __html: preview }}
-        ></div>
+        />
       </div>
     </div>
   );
 }
-
