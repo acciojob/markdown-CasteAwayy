@@ -36,7 +36,6 @@ export default function App() {
         <textarea
           className="textarea"
           rows={20}
-          value={markdown}
           onChange={handleMarkdownChange}
         >
           {markdown}
