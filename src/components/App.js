@@ -4,7 +4,7 @@ import React from "react";
 import "./../styles/styles.css";
 
 export default function App() {
-  const [markdown, setMarkdown] = useState("");
+  const [markdown, setMarkdown] = useState("# Hello World");
   const [preview, setPreview] = useState("");
   const [loading, setLoading] = useState(true);
 
