@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import MarkdownIt from "markdown-it";
 import React from "react";
 import "./../styles/styles.css";
+
 
 export default function App() {
   const [markdown, setMarkdown] = useState("");
@@ -16,7 +18,9 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    setPreview(markdown);
+    let md = new MarkdownIt();
+    let renderedHTML = md.render(markdown);
+    setPreview(renderedHTML);
   }, [markdown]);
 
   const handleMarkdownChange = (e) => {
@@ -27,7 +31,7 @@ export default function App() {
     return <div className="loading">Loading...</div>;
   }
 
- return (
+  return (
     <div className="app">
       <div className="textarea-container">
         <textarea
@@ -38,10 +42,12 @@ export default function App() {
         />
       </div>
       <div className="preview-container">
-        <div className="preview">
-          <h1>{preview}</h1>
-        </div>
+        <div
+          className="preview"
+          dangerouslySetInnerHTML={{ __html: preview }}
+        ></div>
       </div>
     </div>
   );
 }
+
