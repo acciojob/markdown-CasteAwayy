@@ -3,7 +3,6 @@ import MarkdownIt from "markdown-it";
 import React from "react";
 import "./../styles/styles.css";
 
-
 export default function App() {
   const [markdown, setMarkdown] = useState("");
   const [preview, setPreview] = useState("");
