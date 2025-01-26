@@ -40,10 +40,10 @@ export default function App() {
         />
       </div>
       <div className="preview-container">
-        <div
+       {/* <div
           className="preview"
           dangerouslySetInnerHTML={{ __html: preview }}
-        />
+        /> */}
       </div>
     </div>
   );
