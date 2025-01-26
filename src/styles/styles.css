@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.app {
+  margin: 1rem;
+  width: 600px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.textarea-container {
+  height: 20rem;
+}
+.textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+}
+.preview-container {
+  border: 1px solid;
+}
