@@ -12,18 +12,7 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.textarea-container {
-  height: 20rem;
-}
 .textarea {
-  padding: 0.5rem;
-  width: 100%;
-  height: 100%;
-  resize: none;
-  border: none;
-  border-right: 1px solid black;
-  outline: none;
+  max-height: 25rem;
 }
-.preview-container {
-  padding: 0.5rem;
-}
+
