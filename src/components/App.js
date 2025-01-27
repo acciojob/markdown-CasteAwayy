@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { marked } from "marked";
 import React from "react";
+import { marked } from "marked";
+import './../styles/styles.css'
 
 const App = () => {
   const [markdown, setMarkdown] = useState("");
