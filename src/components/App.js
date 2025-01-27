@@ -1,14 +1,17 @@
 import { useState, useEffect } from "react";
 import React from "react";
-import { marked } from "marked";
+import MarkdownIt from "markdown-it";
 import './../styles/styles.css'
+
 
 const App = () => {
   const [markdown, setMarkdown] = useState("");
   const [html, setHtml] = useState("");
+  const md = new MarkdownIt();
+
   useEffect(() => {
-    const rawMarkup = marked(markdown);
-    setHtml(rawMarkup);
+    const rawHtml = md.render(markdown);
+    setHtml(rawHtml);
   }, [markdown]);
 
   return (
@@ -17,6 +20,7 @@ const App = () => {
         className="textarea"
         onChange={(e) => setMarkdown(e.target.value)}
         value={markdown}
+        placeholder="Type Markdown here..."
       />
       <div className="preview" dangerouslySetInnerHTML={{ __html: html }} />
     </div>
@@ -24,4 +28,5 @@ const App = () => {
 };
 
 export default App;
+
 
