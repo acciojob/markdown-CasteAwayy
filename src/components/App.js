@@ -1,40 +1,26 @@
 import { useState, useEffect } from "react";
-import MarkdownIt from "markdown-it";
+import { marked } from "marked";
 import React from "react";
-import "./../styles/styles.css";
 
-export default function App() {
-  const [markdown, setMarkdown] = useState("# Hello World");
-  const [preview, setPreview] = useState("");
-
+const App = () => {
+  const [markdown, setMarkdown] = useState("");
+  const [html, setHtml] = useState("");
   useEffect(() => {
-    let md = new MarkdownIt();
-    let currPrev = md.render(markdown);
-    setPreview(currPrev);
+    const rawMarkup = marked(markdown);
+    setHtml(rawMarkup);
   }, [markdown]);
-
-  const handleMarkdownChange = (e) => {
-    setMarkdown(e.target.value);
-  };
 
   return (
     <div className="app">
-      <div className="textarea-container">
-        <textarea
-          className="textarea"
-          rows={20}
-          onChange={handleMarkdownChange}
-        >
-          {markdown}
-        </textarea>
-      </div>
-      <div className="preview-container">
-        <div
-          className="preview"
-          dangerouslySetInnerHTML={{ __html: preview }}
-        />
-      </div>
+      <textarea
+        className="textarea"
+        onChange={(e) => setMarkdown(e.target.value)}
+        value={markdown}
+      />
+      <div className="preview" dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );
-}
+};
+
+export default App;
 
